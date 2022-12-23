@@ -1,0 +1,1 @@
+msgbox "Instalacja przebiegla pomyslnie", vbInformation, "Powodzenie"
