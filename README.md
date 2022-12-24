@@ -1,1 +1,3 @@
-W plikach znajduje się instalator _("Installer.bat")._
+![Logo][logo]
+
+[logo]: https://github.com/vDeresh/Grace/blob/main/logo.png "Logo"
