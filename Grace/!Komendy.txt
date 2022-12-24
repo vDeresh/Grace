@@ -33,7 +33,7 @@ Visual Studio Code" - Uruchamia Visual Studio Code
 
 CPU-Z" - Uruchamia CPU-Z
 
-Monitor" wydajności - Uruchamia monitor wydajności (perfmon.msc)
+Monitor wydajności" - Uruchamia monitor wydajności (perfmon.msc)
 
 Konsolę" - Uruchamia konsolę CMD
 
