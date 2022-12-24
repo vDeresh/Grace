@@ -1,0 +1,40 @@
+# Komendy Grace
+
+## Przywitania na które Grace reaguje:
+
+- Cześć
+- Siema
+- Hej
+
+## "Włącz / wyłącz...
+
+- Chrome" - Otwiera / zamyka przeglądarkę Google Chrome
+- Operę" - Otwiera / zamyka przeglądarkę Opera GX
+- Spotify" - Otwiera / zamyka Spotify
+- Discorda" - Otwiera / zamyka Discord
+#### (UWAGA: Aby te polecenia działały poprawnie, w folderze Grace muszą być skróty do tych aplikacji o tych samych nazwach jakie mają obecne już tam skróty)
+
+## "Włącz...
+- Visual Studio Code" - Uruchamia Visual Studio Code 
+- CPU-Z" - Uruchamia CPU-Z
+#### (UWAGA: Aby te polecenia działały poprawnie, w folderze Grace muszą być skróty do tych aplikacji o tych samych nazwach jakie mają obecne już tam skróty)
+- Monitor wydajności" - Uruchamia monitor wydajności (perfmon.msc)
+- Konsolę" - Uruchamia konsolę CMD
+- Notatnik" - Uruchamia notatnik
+- Kalkulator" - Uruchamia kalkulator
+
+## Inne:
+
+- "Podaj ciekawostkę" - Czyta trzy pierwsze zdania z losowej strony na Wikipedii
+- "Otwórz swoją lokalizację" - Otwiera folder w którym się znajduje (C:\Grace)
+- "Wyszukaj w internecie" - Po wypowiedzeniu tej komendy należy zaczekać aż Grace zapyta co wyszukać, następnie powiedzeć frazę którą ma wyszukać w domyślnej przeglądarce
+
+## Inne v2:
+
+- "Wyłącz się" - Wyłącza Grace
+- "Uruchom ponownie" - Restartuje Grace
+- "Uśpij się" - Po wypowiedzeniu tej komendy należy zaczekać aż Grace zapyta na ile minut powinna się wyłączyć (program zostaje aktywny ale Grace nie słucha poleceń), wtedy podać liczbę całkowitą (np. 10). Po tym czasie Grace powinna znowu się uruchomić.
+- "Uruchom komputer ponownie" - Restartuje komputer **(UWAGA: Grace nie wymaga żadnego potwierdzenia do wykonania tej czynności)**
+- "Wyłącz komputer" - Wyłącza komputer **(UWAGA: Grace nie wymaga żadnego potwierdzenia do wykonania tej czynności)**
+- "Test" - Sprawdza działanie wszystkich bibliotek (oprócz "Webbrowser"). Jeśli po wypowiedzeniu tej komendy Grace wyłączyła się oznacza to że istnieje jakiś błąd (najprawdopodobniej Grace została źle zainstalowana).
+- "Support" - Otwiera zaproszenie do serwera Discord w domyślnej przeglądarce

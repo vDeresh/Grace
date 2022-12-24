@@ -6,6 +6,9 @@ import datetime
 import wikipedia
 import time
 import random
+import pyautogui
+import unicodedata
+import string
 
 wikipedia.set_lang("pl")
 
@@ -66,7 +69,7 @@ def listen(language):
   except sr.RequestError as e:
     print("Error making request: {0}".format(e))
     return ""
-  
+
 def uspienie():
   r = sr.Recognizer()
           
@@ -99,15 +102,39 @@ def wyszukajinternet():
   r = sr.Recognizer()
       
   with sr.Microphone() as source:
-    print("Powiedz coś:")
+    print("Co wyszukać?")
     audio = r.listen(source)
     
   try:
     search_term = r.recognize_google(audio, language="pl-PL")
-    print(f"Powiedziałeś: {search_term}")
+    print(f"Wyszukuję: {search_term}")
     webbrowser.open("https://www.google.pl/search?q=" + search_term)
   except sr.UnknownValueError:
     print("Przepraszam, nie zrozumiałam tego co powiedział*ś.")
+    speak("Nie zrozumiałam tego co powiedziałeś.", 'pl-PL')
+    wyszukajinternet()
+  except sr.RequestError as e:
+    print(f"Wystąpił błąd: {e}")
+
+def napisz():
+  speak("Co napisać?", 'pl-PL')
+      
+  r = sr.Recognizer()
+      
+  with sr.Microphone() as source:
+    print("Co napisać?")
+    audio = r.listen(source)
+    
+  try:
+    pisanie = r.recognize_google(audio, language='pl-PL')
+    nPisanie = unicodedata.normalize("NFD", pisanie)
+    ndPisanie = nPisanie.capitalize()
+    print(f"Zrozumiałam: {ndPisanie}")
+    pyautogui.typewrite(ndPisanie)
+  except sr.UnknownValueError:
+    print("Przepraszam, nie zrozumiałam tego co powiedział*ś.")
+    speak("Nie zrozumiałam tego co powiedziałeś.", 'pl-PL')
+    napisz()
   except sr.RequestError as e:
     print(f"Wystąpił błąd: {e}")
 
@@ -186,10 +213,10 @@ def main():
       break # --------------------------------------------------- Konsola
     
     elif "włącz notatnik" in command:
-      os.system("notepad.exe") # -------------------------------- Notatnik
+      os.system("start notepad.lnk") # -------------------------------- Notatnik
       
     elif "włącz kalkulator" in command: 
-      os.system("calc.exe") # ----------------------------------- Kalkulator
+      os.system("start calc.lnk") # ----------------------------------- Kalkulator
       
     elif "podaj ciekawostkę" in command:
       random_page = wikipedia.random(pages=1)
@@ -199,6 +226,9 @@ def main():
       
     elif "wyszukaj w internecie" in command:
       wyszukajinternet() # -------------------------------------- Wyszukiwanie w internecie
+
+    elif "napisz" in command:
+      napisz()
       
     elif "otwórz swoją lokalizację" in command:
       os.system("start \Grace")
